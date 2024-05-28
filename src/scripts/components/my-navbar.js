@@ -7,7 +7,7 @@ class MyNavbar extends HTMLElement {
     this.innerHTML = `
     <header>
     <h1><a href="">Nusantara Foods</a></h1>
-    <a id="menu" class="NavMenu">☰</a>
+    <button id="menu" class="NavMenu">☰</button>
     <nav id="drawer" class="nav">
       <ul>
         <li><a href="#">Home</a></li>

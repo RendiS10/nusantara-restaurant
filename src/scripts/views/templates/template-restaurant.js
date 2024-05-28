@@ -4,11 +4,7 @@ import CONFIG from '../../global/config';
 const listRestaurantCard = (resto) => `
 <a href="#/detail/${resto.id}" class="cards">
 <div class="cards">
-<picture>
-<source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" type="image/webp">
-<source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" type="image/jpeg">
-<img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" class="lazyload" />
-</picture>
+<img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}"  />
 <div class="card-body">
 <p tabindex="0" style='color:#FDD663;'>Rating: ${resto.rating}</p>
   <h3 tabindex="0" style='color:#F4511E;' >Nama Restaurant : ${resto.name}</h3>
@@ -22,11 +18,7 @@ const listRestaurantDetail = (resto) => `
 <div class="detail-restaurant">
 <div class="detail-restaurant-img">
 <h2 style="color : red;display : flex; justify-content : center;">${resto.name}</h2>
-<picture>
-<source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}" type="image/jpeg">
-<source media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}-small.jpg" type="image/webp">
-<img src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}-large.jpg" class="lazyload" style = "width : 20rem"/>
-</picture>
+<img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}" alt="${resto.name}-large.jpg" style = "width : 20rem"/>
 </div>
 <div class="detail-info">
 <h3>Deskripsi Restaurant</h3>

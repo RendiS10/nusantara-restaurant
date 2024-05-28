@@ -6,23 +6,27 @@ import '../styles/responsive.css';
 import './components/my-footer.js';
 import './components/my-hero.js';
 import './components/my-navbar.js';
-import App from './views/app';
-import swRegister from './utils/sw-register';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
-const app = new App({
-  button: document.querySelector('#menu'),
-  drawer: document.querySelector('#drawer'),
-  hero: document.querySelector('#hero'),
-  main: document.querySelector('#mainContent'),
-});
+const START = 10;
+const NUMBER_OF_IMAGES = 100;
+
+const app = new (async () => {
+  const App = (await import('./views/app')).default;
+  return new App({
+    button: document.querySelector('#menu'),
+    drawer: document.querySelector('#drawer'),
+    hero: document.querySelector('#hero'),
+    main: document.querySelector('#mainContent'),
+  });
+})();
 
 window.addEventListener('hashchange', () => {
-  app.renderPage();
+  app.then((instance) => instance.renderPage());
 });
 
 window.addEventListener('load', () => {
-  app.renderPage();
-  swRegister();
+  app.then((instance) => instance.renderPage());
+  import('./utils/sw-register').then((module) => module.default());
 });
