@@ -94,8 +94,11 @@ li  a:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
-  background-image: url(../public/images/heros/hero-image.jpg);
+  background-image: url('../public/images/heros/hero-image.jpg'); /* Fallback */
+  background-image: image-set(
+    url('../public/images/heros/hero-image.jpg') 1x,
+    url('../public/images/heros/hero-image.jpg') 2x
+  );
   background-size: cover;
   background-position: center;
   min-height: 380px;
@@ -108,14 +111,14 @@ li  a:focus {
   height: 380px;
   background-color: #560000ab;
 }
-
 .hero h2 {
   padding: 5rem;
   text-align: center;
-  color: #ffffff;
+  position: unset;
+  color: #fff;
   padding-top: 10rem;
+  
 }
-
 .skip-link {
   position: absolute;
   top: -50px;
