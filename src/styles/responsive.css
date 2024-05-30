@@ -39,10 +39,10 @@
     padding-block: 13px;
   }
   .hero {
-    background-image: url('../public/images/heros/hero-image.jpg'); /* Fallback */
+    background-image: url('../public/images/heros/hero-imagesmall.webp'); 
     background-image: image-set(
-      url('../public/images/heros/hero-image.jpg') 1x,
-      url('../public/images/heros/hero-image.jpg') 2x
+      url('../public/images/heros/hero-imagesmall.webp') 1x,
+      url('../public/images/heros/hero-imagesmall.webp') 2x
     );
     min-height: 200px;
   }

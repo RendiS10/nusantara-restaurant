@@ -75,4 +75,6 @@ Scenario('If Form Ulasan Terisi', async ({ I }) => {
   I.wait(5);
   I.click('.swal-button--confirm');
   I.wait(5);
+  I.seeElement('#ulasan-form');
+  I.wait(5);
 });
