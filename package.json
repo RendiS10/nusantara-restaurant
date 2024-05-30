@@ -9,7 +9,8 @@
     "serve": "http-server dist",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "keywords": [],
   "author": "rendisutendi10@gmail.com",
