@@ -1,5 +1,13 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
+
+// Polyfill for Object.hasOwn
+if (!Object.hasOwn) {
+  Object.hasOwn = function (obj, prop) {
+    return Object.prototype.hasOwnProperty.call(obj, prop);
+  };
+}
+
 import 'regenerator-runtime';
 import '../styles/main.css';
 import '../styles/responsive.css';
@@ -12,6 +20,7 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 const START = 10;
 const NUMBER_OF_IMAGES = 100;
 
+// Dynamic import for App module
 const app = new (async () => {
   const App = (await import('./views/app')).default;
   return new App({
